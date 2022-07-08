@@ -7,7 +7,7 @@ sudo apt update; sudo apt dist-upgrade -y; sudo apt autoremove -y
 # Install Packages
 # -----------------------------------------------------------------------
 sudo apt install ubuntu-restricted-extras -y
-sudo apt install gparted gnome-tweaks tilix fzf git unrar curl apt-transport-https ca-certificates curl software-properties-common -y
+sudo apt install gparted gnome-tweaks tilix fzf git unrar curl apt-transport-https ca-certificates curl software-properties-common htop usb-creator-gtk-y
 sudo snap install vlc spotify postman insomnia dbeaver-ce
 sudo snap install code --classic
 sudo snap install sublime-text --classic
