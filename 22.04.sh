@@ -7,7 +7,7 @@ sudo apt update; sudo apt dist-upgrade -y; sudo apt autoremove -y
 # Install Packages
 # -----------------------------------------------------------------------
 sudo apt install ubuntu-restricted-extras -y
-sudo apt install gparted gnome-tweaks tilix fzf git unrar curl apt-transport-https ca-certificates curl software-properties-common htop usb-creator-gtk-y
+sudo apt install gparted gnome-tweaks tilix fzf git unrar curl apt-transport-https ca-certificates software-properties-common htop usb-creator-gtk p7zip -y
 sudo snap install vlc spotify postman insomnia dbeaver-ce
 sudo snap install code --classic
 sudo snap install sublime-text --classic
@@ -16,11 +16,11 @@ sudo snap install rider --classic
 # -----------------------------------------------------------------------
 # Install .NET 6.0
 # -----------------------------------------------------------------------
-wget https://packages.microsoft.com/config/ubuntu/22.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
 sudo dpkg -i packages-microsoft-prod.deb
 rm packages-microsoft-prod.deb
 
-sudo apt-get install -y dotnet-sdk-6.0
+sudo apt update; apt install dotnet-sdk-6.0 -y 
 
 # -----------------------------------------------------------------------
 # Install Docker
@@ -49,11 +49,11 @@ sudo apt install default-jdk -y
 # -----------------------------------------------------------------------
 sudo apt install zsh -y
 sudo chsh -s /bin/zsh ${USER}
-sudo sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 sudo apt install fonts-powerline
-#plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+#plugins=(git zsh-autosuggestions zsh-syntax-highlighting fzf)
 #configurar tema
 
 # -----------------------------------------------------------------------
@@ -61,3 +61,7 @@ sudo apt install fonts-powerline
 # -----------------------------------------------------------------------
 mkdir -p ${HOME}/workspace
 sudo -u $USER bash -c "ssh-keygen -f /home/$USER/.ssh/id_rsa -N ''"
+
+
+git config --global user.email "jackson@jacksonveroneze.com"
+git config --global user.name "Jackson Veroneze"
