@@ -1,12 +1,15 @@
 # -----------------------------------------------------------------------
 # Update System
 # -----------------------------------------------------------------------
-sudo apt update; sudo apt upgrade -y; sudo apt dist-upgrade -y; sudo apt autoremove -y
+sudo apt update; sudo apt upgrade -y; sudo apt dist-upgrade -y; \
+  sudo apt clean; sudo apt autoclean; sudo apt autoremove -y; \
+  sudo rm -rf /var/lib/apt/lists/*
 
 # -----------------------------------------------------------------------
 # Install Packages
 # -----------------------------------------------------------------------
-sudo apt install ubuntu-restricted-extras gparted gnome-tweaks \
+sudo apt install -y --no-install-recommends \
+  ubuntu-restricted-extras gparted gnome-tweaks \
   git tilix fzf unrar curl apt-transport-https ca-certificates \
   software-properties-common htop usb-creator-gtk p7zip -y
 
