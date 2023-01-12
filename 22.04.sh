@@ -1,8 +1,8 @@
 # -----------------------------------------------------------------------
 # Update System
 # -----------------------------------------------------------------------
-sudo apt update; sudo apt upgrade -y; sudo apt dist-upgrade -y; \
-  sudo apt clean; sudo apt autoclean; sudo apt autoremove -y; \
+sudo apt update && sudo apt upgrade -y && sudo apt dist-upgrade -y && \
+  sudo apt clean && sudo apt autoclean && sudo apt autoremove -y && \
   sudo rm -rf /var/lib/apt/lists/*
 
 # -----------------------------------------------------------------------
@@ -13,10 +13,16 @@ sudo apt install -y --no-install-recommends \
   git tilix fzf unrar curl apt-transport-https ca-certificates \
   software-properties-common htop usb-creator-gtk p7zip -y
 
-sudo snap install vlc spotify postman insomnia dbeaver-ce
+sudo snap install firefox vlc spotify postman insomnia dbeaver-ce
 sudo snap install code --classic
 sudo snap install sublime-text --classic
 sudo snap install rider --classic
+
+# -----------------------------------------------------------------------
+# Install Chrome
+# -----------------------------------------------------------------------
+wget -c "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
+sudo dpkg -i google-chrome-stable_current_amd64.deb
 
 # -----------------------------------------------------------------------
 # Install .NET
@@ -56,6 +62,12 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 sudo apt install fonts-powerline
 #plugins=(git zsh-autosuggestions zsh-syntax-highlighting fzf)
 #configurar tema
+
+# -----------------------------------------------------------------------
+# Install Wireshark
+# -----------------------------------------------------------------------
+yes | sudo DEBIAN_FRONTEND=noninteractive apt install wireshark
+sudo usermod -aG wireshark $USER
 
 # -----------------------------------------------------------------------
 # Others
