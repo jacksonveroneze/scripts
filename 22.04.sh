@@ -11,7 +11,7 @@ sudo apt update && sudo apt upgrade -y && sudo apt dist-upgrade -y && \
 sudo apt install -y --no-install-recommends \
   ubuntu-restricted-extras gparted gnome-tweaks \
   git tilix fzf unrar curl apt-transport-https ca-certificates \
-  software-properties-common htop usb-creator-gtk p7zip -y
+  software-properties-common net-tools htop usb-creator-gtk p7zip -y
 
 sudo snap install firefox vlc spotify postman insomnia dbeaver-ce
 sudo snap install code --classic
