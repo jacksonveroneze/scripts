@@ -1,9 +1,7 @@
 # -----------------------------------------------------------------------
 # Update System
 # -----------------------------------------------------------------------
-sudo apt update && sudo apt upgrade -y && sudo apt dist-upgrade -y && \
-  sudo apt clean && sudo apt autoclean && sudo apt autoremove -y && \
-  sudo rm -rf /var/lib/apt/lists/*
+sudo apt update && sudo apt upgrade -y && sudo apt dist-upgrade -y
 
 # -----------------------------------------------------------------------
 # Install Packages
@@ -12,7 +10,7 @@ sudo apt install -y --no-install-recommends \
   ubuntu-restricted-extras gparted gnome-tweaks \
   git tilix fzf unrar curl apt-transport-https ca-certificates \
   software-properties-common net-tools htop usb-creator-gtk p7zip \
-  apache2-utils postgresql-client -y
+  apache2-utils postgresql-client mysql-client -y
 
 sudo snap install firefox vlc spotify postman insomnia dbeaver-ce
 sudo snap install code --classic
@@ -28,7 +26,12 @@ sudo dpkg -i google-chrome-stable_current_amd64.deb
 # -----------------------------------------------------------------------
 # Install .NET
 # -----------------------------------------------------------------------
-apt install dotnet-sdk-7.0 -y 
+wget "https://packages.microsoft.com/config/ubuntu/$(lsb_release -sr)/packages-microsoft-prod.deb" -O packages-microsoft-prod.deb
+sudo dpkg -i packages-microsoft-prod.deb
+rm packages-microsoft-prod.deb
+
+sudo apt update && \
+  sudo apt install -y dotnet-sdk-7.0
 
 # -----------------------------------------------------------------------
 # Install Docker
@@ -69,6 +72,12 @@ sudo apt install fonts-powerline
 # -----------------------------------------------------------------------
 yes | sudo DEBIAN_FRONTEND=noninteractive apt install wireshark
 sudo usermod -aG wireshark $USER
+
+# -----------------------------------------------------------------------
+# Clean apt
+# -----------------------------------------------------------------------
+sudo sudo apt clean && sudo apt autoclean && sudo apt autoremove -y && \
+  sudo rm -rf /var/lib/apt/lists/*
 
 # -----------------------------------------------------------------------
 # Others
