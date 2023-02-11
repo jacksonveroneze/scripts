@@ -20,8 +20,8 @@ sudo snap install rider --classic
 # -----------------------------------------------------------------------
 # Install Chrome
 # -----------------------------------------------------------------------
-wget -c "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
-sudo dpkg -i google-chrome-stable_current_amd64.deb
+wget -c "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb" -P /tmp
+sudo dpkg -i /tmp/google-chrome-stable_current_amd64.deb
 
 # -----------------------------------------------------------------------
 # Install .NET
