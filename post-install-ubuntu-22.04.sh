@@ -16,6 +16,7 @@ sudo snap install firefox vlc spotify postman insomnia dbeaver-ce
 sudo snap install code --classic
 sudo snap install sublime-text --classic
 sudo snap install rider --classic
+sudo snap install another-redis-desktop-manager dbgate
 
 # -----------------------------------------------------------------------
 # Install Chrome
@@ -26,12 +27,12 @@ sudo dpkg -i /tmp/google-chrome-stable_current_amd64.deb
 # -----------------------------------------------------------------------
 # Install .NET
 # -----------------------------------------------------------------------
-wget "https://packages.microsoft.com/config/ubuntu/$(lsb_release -sr)/packages-microsoft-prod.deb" -O packages-microsoft-prod.deb
-sudo dpkg -i packages-microsoft-prod.deb
-rm packages-microsoft-prod.deb
+#wget "https://packages.microsoft.com/config/ubuntu/$(lsb_release -sr)/packages-microsoft-prod.deb" -O packages-microsoft-prod.deb
+#sudo dpkg -i packages-microsoft-prod.deb
+#rm packages-microsoft-prod.deb
 
 sudo apt update && \
-  sudo apt install -y dotnet-sdk-7.0
+  sudo apt install -y dotnet-sdk-6.0 dotnet-sdk-7.0
 
 # -----------------------------------------------------------------------
 # Install Docker
@@ -45,10 +46,7 @@ sudo usermod -aG docker ${USER}
 # -----------------------------------------------------------------------
 # Install Docker compose
 # -----------------------------------------------------------------------
-mkdir -p ~/.docker/cli-plugins/
-curl -SL https://github.com/docker/compose/releases/download/v2.3.3/docker-compose-linux-x86_64 -o ~/.docker/cli-plugins/docker-compose
-
-chmod +x ~/.docker/cli-plugins/docker-compose
+sudo apt-get install docker-compose-plugin
 
 # -----------------------------------------------------------------------
 # Install Java
