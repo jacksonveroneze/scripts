@@ -85,5 +85,5 @@ sudo sudo apt clean && sudo apt autoclean && sudo apt autoremove -y && \
 mkdir -p ${HOME}/workspace
 sudo -u $USER bash -c "ssh-keygen -f /home/$USER/.ssh/id_rsa -N ''"
 
-git config --global user.email "jackson@jacksonveroneze.com"
+git config --global user.email "jacksonvze@gmail.com"
 git config --global user.name "Jackson Veroneze"
