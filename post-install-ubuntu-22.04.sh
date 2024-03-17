@@ -27,16 +27,6 @@ wget -c "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.d
 sudo dpkg -i /tmp/google-chrome-stable_current_amd64.deb
 
 # -----------------------------------------------------------------------
-# Install .NET
-# -----------------------------------------------------------------------
-#wget "https://packages.microsoft.com/config/ubuntu/$(lsb_release -sr)/packages-microsoft-prod.deb" -O packages-microsoft-prod.deb
-#sudo dpkg -i packages-microsoft-prod.deb
-#rm packages-microsoft-prod.deb
-
-sudo apt update && \
-  sudo apt install -y dotnet-sdk-6.0 dotnet-sdk-7.0
-
-# -----------------------------------------------------------------------
 # Install Docker
 # -----------------------------------------------------------------------
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
@@ -44,11 +34,6 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docke
 
 sudo apt update; sudo apt install docker-ce -y
 sudo usermod -aG docker ${USER}
-
-# -----------------------------------------------------------------------
-# Install Docker compose
-# -----------------------------------------------------------------------
-sudo apt-get install docker-compose-plugin
 
 # -----------------------------------------------------------------------
 # Install Java
