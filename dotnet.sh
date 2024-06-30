@@ -13,6 +13,7 @@ dotnet tool install --global dotnet-trace
 dotnet tool install --global dotnet-counters
 dotnet tool install --global dotnet-monitor
 dotnet tool install --global dotnet-stack
+dotnet tool install --global dotnet-dump
 
 
 # -----------------------------------------------------------------------
