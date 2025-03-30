@@ -12,7 +12,7 @@ sudo apt install -y --no-install-recommends \
   ubuntu-restricted-extras gparted gnome-tweaks \
   git tilix fzf unrar curl apt-transport-https ca-certificates \
   software-properties-common net-tools htop usb-creator-gtk p7zip \
-  apache2-utils postgresql-client mysql-client -y
+  apache2-utils postgresql-client mysql-client libfuse2 -y
 
 sudo snap install firefox vlc spotify postman insomnia dbeaver-ce
 sudo snap install code --classic
@@ -51,6 +51,15 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 sudo apt install fonts-powerline
 #plugins=(git zsh-autosuggestions zsh-syntax-highlighting fzf)
 #configurar tema
+
+# -----------------------------------------------------------------------
+# Powerline fonts
+# -----------------------------------------------------------------------
+git clone https://github.com/powerline/fonts.git --depth=1
+cd fonts
+./install.sh
+cd ..
+rm -rf fonts
 
 # -----------------------------------------------------------------------
 # Install Wireshark
