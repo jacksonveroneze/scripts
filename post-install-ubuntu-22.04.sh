@@ -90,3 +90,5 @@ sudo -u $USER bash -c "ssh-keygen -f /home/$USER/.ssh/id_rsa -N ''"
 
 git config --global user.email "jacksonvze@gmail.com"
 git config --global user.name "Jackson Veroneze"
+
+export GTK_IM_MODULE="ibus"
