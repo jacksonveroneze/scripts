@@ -4,7 +4,7 @@
 # Install .NET
 # -----------------------------------------------------------------------
 sudo apt update && \
-  sudo apt install -y dotnet-sdk-6.0 dotnet-sdk-8.0
+  sudo apt install -y dotnet-sdk-8.0 dotnet-sdk-10.0
 
 # -----------------------------------------------------------------------
 # Monitoring
